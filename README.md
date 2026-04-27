@@ -1,6 +1,6 @@
 # ApexFit-Marketing-SQL-Warehouse
 
-This is a SQL project I built to track ads and sales for a fitness brand. I built this to solve a common business problem: identifying which marketing dollars are making money and which are being wasted on "low-quality" traffic.
+This is a SQL project I built to track ads and sales for a fitness brand. I built this to solve a common business problem: identifying which marketing campaigns are making money and which are being wasted on 'low-quality' traffic.
 
 How it works
 I split the data into 5 tables:
