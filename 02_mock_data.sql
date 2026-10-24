@@ -41,7 +41,7 @@ INSERT INTO Ad (CampaignID, AdTitle, TargetURL) VALUES
 (9, 'Chloe''s Favorite Protein Shake', 'apexfit.com/creators/chloe'),
 (10, 'Sub-4 Hour Marathon Plan', 'velocityrun.com/ebook-download');
 
--- Realistic bidding anomalies (low bids for ebooks, high bids for equipment)
+-- Realistic bidding anomalies 
 INSERT INTO Keyword (AdID, KeywordText, BidAmount, QualityScore) VALUES 
 (1, 'best whey isolate', 3.50, 9),
 (2, 'pre workout supplement', 4.00, 8),
@@ -54,7 +54,7 @@ INSERT INTO Keyword (AdID, KeywordText, BidAmount, QualityScore) VALUES
 (9, 'fitness influencer diet', 1.15, 5),
 (10, 'marathon training plan pdf', 0.50, 7);
 
--- Funnel metrics with intentional outliers (e.g., zero conversions on Ad 5)
+-- Funnel metrics with intentional outliers 
 INSERT INTO Performance (AdID, Date, Impressions, Clicks, Conversions) VALUES 
 (1, '2025-01-01', 12500, 850, 65),
 (2, '2025-02-15', 18000, 1200, 110),
@@ -66,3 +66,15 @@ INSERT INTO Performance (AdID, Date, Impressions, Clicks, Conversions) VALUES
 (8, '2025-05-15', 15000, 890, 45),
 (9, '2025-02-01', 95000, 8500, 500), 
 (10, '2025-03-10', 1200, 45, 3); 
+-- Spend = clicks x average keyword bid; Revenue = conversions x assumed £45 order value
+SET SQL_SAFE_UPDATES = 0;
+
+UPDATE Performance p
+JOIN (
+    SELECT AdID, AVG(BidAmount) AS avg_bid
+    FROM Keyword
+    GROUP BY AdID
+) k ON p.AdID = k.AdID
+SET p.Spend   = ROUND(p.Clicks * k.avg_bid, 2),
+    p.Revenue = p.Conversions * 45.00;
+    
