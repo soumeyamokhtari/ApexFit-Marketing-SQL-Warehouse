@@ -16,7 +16,7 @@ The data is split into 5 normalised tables to ensure data integrity:
 * **Keywords:** Search terms that triggered the ads.
 * **Performance:** The fact table tracking clicks, spend, and sales conversions.
 
-> ![Database ER Diagram](ER%20Diagram.png)
+> ![Database ER Diagram](ER diagram.png)
 
 ### 4. How to Run This Project
 Run the SQL files in the following order to reconstruct the database:
