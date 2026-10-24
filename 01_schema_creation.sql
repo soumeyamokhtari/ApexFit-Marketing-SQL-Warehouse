@@ -59,8 +59,11 @@ CREATE TABLE Performance (
     Impressions INT DEFAULT 0,
     Clicks INT DEFAULT 0,
     Conversions INT DEFAULT 0,
+    Spend DECIMAL(10,2) DEFAULT 0.00,
+    Revenue DECIMAL(10,2) DEFAULT 0.00,
     FOREIGN KEY (AdID) REFERENCES Ad(AdID) ON DELETE CASCADE
 );
+
 
 -- Indexing for time-series and join optimisation
 CREATE INDEX idx_perf_date ON Performance(Date);
