@@ -15,7 +15,7 @@ Five tables linked by IDs, so each piece of information is stored once:
 - **Keyword**: search terms and bid amounts for each ad
 - **Performance**: daily impressions, clicks, conversions, spend and revenue
 
-![ER diagram](images/ER_diagram.png)
+![ER diagram](ER_diagram.png)
 
 ## Assumptions
 - **Spend** = clicks × the ad's average keyword bid
@@ -31,7 +31,7 @@ Five tables linked by IDs, so each piece of information is stored once:
 3. **vw_WinningCreatives** is a view of ads with a click-through rate above 4%, ready to feed a dashboard.
 
 ## Sample result
-![ROI results](images/roi_results.png)
+![ROI results](roi_results.png)
 
 Yoga Mat Clearance is flagged for pausing: £102 spent and no conversions. Four campaigns, including Smart Treadmill Pre-Orders, are losing money and need review.
 
