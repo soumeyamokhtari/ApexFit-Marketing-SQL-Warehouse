@@ -44,3 +44,8 @@ Run the files in order in MySQL:
 ## Possible next steps
 - Build a Power BI dashboard from the ROI query and the view
 - Replace the sample data with real campaign data
+
+## Limitations
+- The data is sample data with one row per ad, so there is no real trend over time.
+- Spend and revenue are estimates (clicks x average bid, conversions x £45), so ROI is illustrative.
+- With real data I would add dates to compare campaigns week by week.
