@@ -13,7 +13,7 @@ Five tables linked by IDs, so each piece of information is stored once:
 - **Campaign**: marketing objective and budget
 - **Ad**: the individual ads in each campaign
 - **Keyword**: search terms and bid amounts for each ad
-- **Performance**: daily impressions, clicks, conversions, spend and revenue
+- **Performance**: impressions, clicks, conversions, spend and revenue
 
 ![ER diagram](ER_diagram.png)
 
